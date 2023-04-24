@@ -1,5 +1,30 @@
 <?php declare(strict_types=1);
 
-require_once 'vendor/autoload.php';
+use App\GiphyClient;
 
-echo '<h1>Hello World</h1>';
+require_once 'vendor/autoload.php';
+include 'header.html';
+
+$input = $_POST["search"] ?? "";
+$gifsClient = new GiphyClient();
+$searchedGifs = $gifsClient->searchGifs($input);
+$trendingGifs = $gifsClient->trendingGifs();
+?>
+
+<div style="text-align: center; padding-top: 50px"
+
+<?php
+if ($input) {
+    foreach ($searchedGifs->data as $image) {
+        echo '<br><img src="' . $image->images->original->url . '" alt="image"/></br>';
+    }
+} else {
+    foreach ($trendingGifs->data as $image) {
+        echo '<br><img src="' . $image->images->original->url . '" alt="image"/></br>';
+    }
+}
+?>
+
+<div style="text-align: center; padding-top: 20px; padding-bottom: 20px">
+    <a href="https://giphy.com/"><img src="https://shorturl.at/fgvD5" alt=""/></a>
+</div>
