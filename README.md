@@ -12,7 +12,15 @@ Application for displaying GIFS from GIPHY.
 6. Start server `php -S localhost:63342/giphy-page/main.php`
 7. Click the link to visit web page.
 
-### Resources
+### Resources:
 
 * [GIPHY Documentation](https://developers.giphy.com/docs/api)
 * [Change endpoints](https://developers.giphy.com/explorer/)
+
+### Preview:
+
+Trending gifs are displayed on front page.
+
+You can search for gifs by entering keyword in search bar.
+
+![Powered by GIPHY](https://i.ibb.co/C9Dsp6L/preview.png)
