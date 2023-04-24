@@ -23,4 +23,7 @@ Trending gifs are displayed on front page.
 
 You can search for gifs by entering keyword in search bar.
 
-<img src="https://i.ibb.co/C9Dsp6L/preview.png" width="250" height="400">
+<img src="https://i.ibb.co/C9Dsp6L/preview.png" width="500" height="800">
+
+
+![Powered by GIPHY](https://i.imgur.com/ujUSHlP.png)
