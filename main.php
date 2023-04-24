@@ -3,7 +3,7 @@
 use App\GiphyClient;
 
 require_once 'vendor/autoload.php';
-include 'header.html';
+include 'index.html';
 
 $input = $_POST["search"] ?? "";
 $gifsClient = new GiphyClient();
