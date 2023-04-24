@@ -9,7 +9,7 @@ Application for displaying GIFS from GIPHY.
 3. Get your API key from [GIPHY](https://developers.giphy.com/)
 4. Rename `.env.example` to `.env`
 5. Insert your API Key `API_KEY=YOUR_API_KEY`
-6. Start server `php -S localhost:63342/giphy-page/main.php`
+6. Start server `php -S localhost:8000`
 7. Click the link to visit web page.
 
 ### Resources:
@@ -23,6 +23,7 @@ Trending gifs are displayed on front page.
 
 You can search for gifs by entering keyword in search bar.
 
-<img src="https://i.ibb.co/x67pYKc/preview.png" width=500 height=50%>
+<img src="https://i.ibb.co/x67pYKc/preview.png" width=500 height=50% alt="image">
+
 
 
