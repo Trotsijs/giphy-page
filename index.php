@@ -10,7 +10,6 @@ $gifsClient = new GiphyClient();
 $searchedGifs = $gifsClient->searchGifs($input);
 $trendingGifs = $gifsClient->trendingGifs();
 ?>
-
 <div style="text-align: center; padding-top: 50px"
 
 <?php

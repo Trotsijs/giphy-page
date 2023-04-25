@@ -27,15 +27,6 @@ a:hover {
     box-sizing: border-box;
 }
 
-.header:hover {
-    color: #ffcc00;
-}
-
-.header h1 {
-    display: inline-block;
-    margin: 0;
-}
-
 .header form {
     display: flex;
     align-items: center;
