@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8"/>
     <title>GIPHY Page</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="description" content="GIPHY Page"/>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../style/style.css">
+    <link rel="icon" href="../../images/favicon.ico">
 </head>
 <body>
 <div class="header" id="myHeader">
-    <h1><a href="index.php">🏚️ GIPHY PAGE</a></h1>
-    <form class="form" method="post" action="index.php">
+    <h1><a href="../../index.php">🏚️ GIPHY PAGE</a></h1>
+    <form class="form" method="post" action="../../index.php">
         <label>
             <input type="text" name="search" placeholder="Search gifs">
         </label>
