@@ -1,29 +1,31 @@
 <?php declare(strict_types=1);
 
-use App\GiphyClient;
+use App\Controllers\GifController;
+use App\Models\Giphy;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 require_once 'vendor/autoload.php';
-require_once 'view.php';
+require_once 'router.php';
 
-$input = $_POST["search"] ?? "";
-$gifsClient = new GiphyClient();
-$searchedGifs = $gifsClient->searchGifs($input);
-$trendingGifs = $gifsClient->trendingGifs();
-?>
-<div style="text-align: center; padding-top: 50px"
+$gifController = new GifController();
+$searchedGifs = $gifController->search();
+$trendingGifs = $gifController->trending();
+$randomGifs = $gifController->random();
 
-<?php
-if ($input) {
-    foreach ($searchedGifs->data as $image) {
-        echo '<br><img src="' . $image->images->original->url . '" alt="image"/></br>';
+$loader = new FilesystemLoader(__DIR__ . '/App/Views');
+$twig = new Environment($loader);
+
+$gifs = [];
+
+if (!empty($searchedGifs)) {
+    foreach ($searchedGifs as $gif) {
+        $gifs[] = new Giphy($gif->title, $gif->images->original->url);
     }
 } else {
-    foreach ($trendingGifs->data as $image) {
-        echo '<br><img src="' . $image->images->original->url . '" alt="image"/></br>';
+    foreach ($trendingGifs as $gif) {
+        $gifs[] = new Giphy($gif->title, $gif->images->original->url);
     }
 }
-?>
 
-<div style="text-align: center; padding-top: 20px; padding-bottom: 20px">
-    <a href="https://giphy.com/"><img src="https://shorturl.at/fgvD5" alt=""/></a>
-</div>
+echo $twig->render('view.twig', ['gifs' => $gifs]);

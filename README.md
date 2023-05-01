@@ -11,8 +11,11 @@ composer install
 ````
 3. Get your API key from [GIPHY](https://developers.giphy.com/)
 4. Rename `.env.example` to `.env`
-5. Insert your API Key `API_KEY=YOUR_API_KEY`
-6. Start server in your terminal
+5. Modify `.env` with your API key:
+```php
+API_KEY= // Paste your API key here.
+```
+6. Start server in your terminal:
 ````
 php -S localhost:8000
 ````

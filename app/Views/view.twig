@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>GIPHY Page</title>
+    <meta name="description" content="GIPHY Page"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="icon" href="../../images/favicon.ico">
+</head>
+<body>
+<div class="header" id="myHeader">
+    <h1>🏚️ GIPHY PAGE</h1>
+    <form action="/trending" method="GET">
+        <input class="trendingButton" id="trending" type="submit" value="Trending">
+        <input type="hidden" name="formSubmitted" value="true"><br>
+    </form>
+    <form class="form" method="post" action="../../index.php">
+        <label>
+            <input type="text" name="search" placeholder="Search gifs">
+        </label>
+        <input type="submit" name="submit" value="Search">
+    </form>
+    {% if formSubmitted == true %}
+        {% for gif in gifs %}
+            <br><img src="{{ gif.url }}" alt="{{ gif.title }}"/><br>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div style="text-align: center; padding-top: 50px">
+    {% for gif in gifs %}
+        <br><img src="{{ gif.url }}" alt="{{ gif.title }}"/><br>
+    {% endfor %}
+</div>
+
+<div style="text-align: center; padding-top: 20px; padding-bottom: 20px">
+    <a href="https://giphy.com/"><img src="https://shorturl.at/fgvD5" alt=""/></a>
+</div>
+
+</body>
+</html>
